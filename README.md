@@ -3,7 +3,9 @@ Linux Conf AU 2016 - ELK entry
 
 
 Downloaded CAPAD 2014 terrestrial data from: www.environment.gov.au/fed/
+
 Converted .dbf file inside zip to csv with Excel (todo check how to do with Linux)
+
 The CAPAD_2014_terrestrial.csv file has been included for convenience.
 
 Excluded first line from csv as well as any row with OVERLAP=2 or NRS_PA=N or NRS_PA=ND
