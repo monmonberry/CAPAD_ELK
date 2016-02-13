@@ -1,0 +1,77 @@
+{
+    "template" : "capad",
+    "match": "capad",
+    "mappings": {
+        "_default_": {
+            "numeric_detection" : false,
+            "_all": {
+                "enabled": true,
+                "norms": {
+                    "enabled": false
+                }
+            },
+            "dynamic_templates": [
+                {
+                    "capad_base": {
+                        "mapping": {
+                            "doc_values": true,
+                            "ignore_above": 1024,
+                            "index": "not_analyzed",
+                            "type": "{dynamic_type}"
+                        },
+                        "match": "*"
+                    }
+                }
+            ],
+            "properties": {
+                "geoip": {
+                    "dynamic": true,
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "NAME": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "TYPE": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "TYPE_ABBR": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "IUCN": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "IUCN_desc": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "STATE": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "Notes": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "@version": {
+                    "index": "not_analyzed",
+                    "type": "string"
+                },
+                "@timestamp": {
+                    "type": "date",
+                    "store": false,
+                    "index": "no"
+                }
+
+            }
+        }
+    }
+}
